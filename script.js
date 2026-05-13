@@ -225,7 +225,7 @@ function timeWeatherWidget() {
 
   async function weatherFetch() {
     let response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=${wKey}&q=auto:ip`,
+      `https://api.weatherapi.com/v1/current.json?key=${wKey}&q=auto:ip`,
     );
     let wData = await response.json();
     temperature.innerHTML = `${Math.floor(wData.current.temp_c)}°C`;
