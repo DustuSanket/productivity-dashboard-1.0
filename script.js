@@ -3,14 +3,20 @@ const wKey = import.meta.env.VITE_WEATHER_KEY;
 function openContainer() {
   const allElems = document.querySelectorAll(".elems");
   const returnBtn = document.querySelectorAll(".return");
+  const dashboard = document.querySelector(".allElems");
+
   allElems.forEach(function (elem) {
     elem.addEventListener("click", function () {
       document.querySelectorAll(".tabs")[elem.id].style.display = "block";
+      dashboard.classList.add("no-dashboard");
+      document.querySelectorAll(".tabs")[elem.id].scrollTop = 0;
     });
   });
+
   returnBtn.forEach(function (elem) {
     elem.addEventListener("click", function () {
       document.querySelectorAll(".tabs")[elem.id].style.display = "none";
+      dashboard.classList.remove("no-dashboard");
     });
   });
 }
